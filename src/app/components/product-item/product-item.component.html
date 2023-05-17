@@ -1,0 +1,9 @@
+<div>
+    <img [src]="product?.image" />
+    <h3>{{ product?.title }}</h3>
+    <p>{{ product?.description }}</p>
+    <p>Rate - {{ product?.rating?.rate }}</p>
+    <p>Cont - {{ product?.rating?.count }}</p>
+    <p>Price - {{ product?.price }}$</p>
+    <img class="cart-icon" src="./assets/images/cart-icon.png" (click)="addToCart()" />
+</div>

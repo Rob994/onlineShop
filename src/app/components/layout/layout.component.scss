@@ -1,0 +1,15 @@
+.shop-header-wrapper {
+    display: flex;
+
+    .menu-item {
+        cursor: pointer;
+        font-size: 18px;
+        padding: 6px 14px;
+        align-items: center;
+
+        img {
+            height: 18px;
+            width: 18px;
+        }
+    }
+}
