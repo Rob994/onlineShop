@@ -1,8 +1,8 @@
 import { Observable } from 'rxjs';
 import { Component } from '@angular/core';
 import { State } from '../../redux/state';
+import { CartProduct } from '../../models';
 import { select, Store } from '@ngrx/store';
-import { CartProduct } from '../../models/product.model';
 import { selectCart } from '../../redux/seletors/cart.selector';
 
 @Component({

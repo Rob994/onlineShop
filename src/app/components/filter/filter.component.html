@@ -10,7 +10,7 @@
 </div>
 
 <div *ngIf="selectedFilter">
-    <form class="form-filter" [formGroup]="formGroup">
+    <form class="form-filter" [formGroup]="filterFormGroup">
         <div *ngIf="selectedFilter.type === filterTypes.text; else range">
             <input type="text" [formControlName]="selectedFilter.key" />
         </div>

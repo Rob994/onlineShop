@@ -2,7 +2,7 @@ import { FilterTypesEnum } from '../enums/filter-types.enum';
 
 export interface RangeValues {
     minValue?: number;
-     maxValue?: number
+    maxValue?: number;
 }
 export interface Filter {
     key: string;

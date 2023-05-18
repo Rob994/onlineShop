@@ -1,15 +1,17 @@
-<div>
-    <img [src]="product?.image" />
-    <h3>{{ product?.title }}</h3>
-    <p>{{ product?.description }}</p>
-    <p>Rate - {{ product?.rating?.rate }}</p>
-    <p>Cont - {{ product?.rating?.count }}</p>
-    <p>Price - {{ product?.price }}$</p>
-    <img class="delete-icon" src="./assets/images/delete-icon.png" (click)="deleteFromCart()" />
-    <div class="count-wrapper">
-        <img class="step-icon" src="./assets/images/increase-decrease-icon.png" (click)="decreaseCount()" />
-        <span>{{ product?.count }}</span>
-        <img class="step-icon step-increase" src="./assets/images/increase-decrease-icon.png" (click)="increaseCount()" />
+<div class="product-item">
+    <img class="product-image" [src]="product?.image" />
+    <div class="content">
+        <h3 class="title">{{ product?.title }}</h3>
+        <p class="description">{{ product?.description }}</p>
+        <p class="rate">Rate - {{ product?.rating?.rate }}</p>
+        <p class="cont">Cont - {{ product?.rating?.count }}</p>
+        <p class="price">Price - {{ product?.price }}$</p>
+        <img class="delete-icon" src="./assets/images/delete-icon.png" (click)="deleteFromCart()" />
+        <div class="count-wrapper">
+            <img class="step-icon" src="./assets/images/increase-decrease-icon.png" (click)="decreaseCount()" />
+            <span class="selected-count">{{ product?.count }}</span>
+            <img class="step-icon step-increase" src="./assets/images/increase-decrease-icon.png" (click)="increaseCount()" />
+        </div>
     </div>
 </div>
 <p>cart-item works!</p>

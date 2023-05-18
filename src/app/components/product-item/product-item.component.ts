@@ -1,8 +1,7 @@
 import { Store } from '@ngrx/store';
-import { Product } from '../../models';
 import { State } from '../../redux/state';
 import { Component, Input } from '@angular/core';
-import { CartProduct } from '../../models/product.model';
+import { CartProduct, Product } from '../../models';
 import { AddToCart } from '../../redux/actions/cart.actions';
 
 @Component({

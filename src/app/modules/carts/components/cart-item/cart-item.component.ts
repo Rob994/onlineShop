@@ -1,8 +1,8 @@
-import { Component, Input } from '@angular/core';
-import { CartProduct } from '../../../../models/product.model';
 import { Store } from '@ngrx/store';
-import { State } from '../../../../redux/state';
-import { AddToCart, DecrementInCart, DeleteFromCart, IncrementInCart } from '../../../../redux/actions/cart.actions';
+import { State } from 'src/app/redux/state';
+import { Component, Input } from '@angular/core';
+import { CartProduct } from 'src/app/models/product.model';
+import { DecrementInCart, DeleteFromCart, IncrementInCart } from 'src/app/redux/actions/cart.actions';
 
 @Component({
     selector: 'app-cart-item',

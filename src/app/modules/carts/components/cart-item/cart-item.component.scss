@@ -1,14 +1,54 @@
-img {
-    width: 20%;
-    height: 250px;
-}
-.delete-icon,
-.step-icon {
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-}
+:host {
+    display: block;
+    margin: 4px;
+    padding: 4px;
+    border-radius: 6px;
+    border: 1px solid #e5e5e5;
+    max-width: 400px;
 
-.step-increase {
-    transform: rotate(180deg);
+    .product-image {
+        width: 300px;
+        height: 150px;
+        object-fit: contain;
+        display: block;
+        margin: 6px auto;
+    }
+
+    .content {
+        padding: 4px 8px;
+
+        .title {
+            color: #0f1111;
+            font-weight: 900;
+            text-align: center;
+        }
+
+        .description {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 7;
+        }
+
+        .delete-icon,
+        .step-icon {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        .count-wrapper {
+            display: flex;
+            align-items: center;
+
+            .step-increase {
+                transform: rotate(180deg);
+            }
+
+            .selected-count {
+                padding: 0 10px;
+                font-size: 25px;
+            }
+        }
+    }
 }

@@ -1,4 +1,4 @@
-import { CartProduct, Product } from "../models/product.model"
+import { CartProduct, Product } from '../models/product.model';
 
 export interface State {
     products: Product[];
@@ -6,6 +6,6 @@ export interface State {
 }
 
 export const AppState: State = {
+    cart: [],
     products: [],
-    cart: []
-}
+};

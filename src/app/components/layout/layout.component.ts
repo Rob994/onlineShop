@@ -16,14 +16,14 @@ export class LayoutComponent implements OnDestroy {
     private _subscriptions = new Subscription();
 
     constructor(private store: Store<State>) {
-        this.setPriceAndCount();
+        this._setPriceAndCount();
     }
 
     ngOnDestroy() {
         this._subscriptions.unsubscribe();
     }
 
-    setPriceAndCount() {
+    private _setPriceAndCount() {
         this._subscriptions.add(
             this.store.pipe(select(selectCart)).subscribe((products) => {
                 this.cartItemsTotalCount = 0;
