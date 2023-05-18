@@ -1,9 +1,8 @@
+import { Observable } from 'rxjs';
 import { Component } from '@angular/core';
 import { State } from '../../redux/state';
 import { select, Store } from '@ngrx/store';
-import { selectProduct } from '../../redux/seletors/product.selector';
-import { Observable } from 'rxjs';
-import { Product } from '../../models';
+import { CartProduct } from '../../models/product.model';
 import { selectCart } from '../../redux/seletors/cart.selector';
 
 @Component({
@@ -12,7 +11,7 @@ import { selectCart } from '../../redux/seletors/cart.selector';
     styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent {
-    products$!: Observable<Product[]>;
+    products$!: Observable<CartProduct[]>;
 
     constructor(private store: Store<State>) {
         this.products$! = this.store.pipe(select(selectCart));

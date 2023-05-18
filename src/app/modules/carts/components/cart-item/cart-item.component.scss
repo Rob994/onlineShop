@@ -1,0 +1,14 @@
+img {
+    width: 20%;
+    height: 250px;
+}
+.delete-icon,
+.step-icon {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.step-increase {
+    transform: rotate(180deg);
+}

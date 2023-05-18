@@ -1,5 +1,17 @@
 <div class="shop-header-wrapper">
-    <a class="menu-item" routerLink="">Products</a>
-    <a class="menu-item" routerLink="/cart">Cart <img src="assets/images/cart-icon.png" /></a>
+    <div class="links">
+        <a class="menu-item" routerLink="">Products</a>
+        <a class="menu-item" routerLink="/cart">Cart</a>
+    </div>
+
+
+    <div class="computed">
+        <img src="assets/images/cart-icon.png" />
+        <span> {{ cartItemsTotalCount }} item</span> /
+        <span> {{ cartItemsTotalPrice }}</span>
+    </div>
 </div>
-<router-outlet></router-outlet>
+
+<div class="router-wrapper">
+    <router-outlet></router-outlet>
+</div>

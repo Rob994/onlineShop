@@ -1,1 +1,1 @@
-<p *ngFor="let a of products$ | async">{{ a | json }}</p>
+<app-cart-item *ngFor="let product of products$ | async" [product]="product"></app-cart-item>

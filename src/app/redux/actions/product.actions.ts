@@ -1,4 +1,4 @@
-import { Action, props } from '@ngrx/store';
+import { Action } from '@ngrx/store';
 import { Product } from 'src/app/models/product.model';
 
 export enum ProductActionsTypes {

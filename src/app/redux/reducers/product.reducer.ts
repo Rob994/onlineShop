@@ -7,11 +7,10 @@ export const productNode = 'products';
 export const productReducer = (state = AppState, action: ProductActions) => {
     switch (action.type) {
         case ProductActionsTypes.setProducts:
-            return {
-                ...state,
-                products: action.products
-            };
+            const { products } = action
+            
+            return { ...state, products };
         default:
-            return { ...state };
+            return state
     }
 };

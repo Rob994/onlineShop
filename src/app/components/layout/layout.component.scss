@@ -1,15 +1,47 @@
-.shop-header-wrapper {
-    display: flex;
-
-    .menu-item {
-        cursor: pointer;
-        font-size: 18px;
-        padding: 6px 14px;
+:host {
+    .shop-header-wrapper {
+        display: flex;
         align-items: center;
+        justify-content: space-between;
+        background-color: #fff;
+        margin-bottom: 24px;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .12);
+        height: 56px;
+        padding: 24px;
 
-        img {
-            height: 18px;
-            width: 18px;
+        .menu-item {
+            text-decoration: none;
+            border-radius: 6px;
+            border: 1px solid #e5e5e5;
+            align-items: center;
+            padding: 8px 16px;
+            margin-right: 8px;
+            color: #1d1d1d;
+            font-family: Euclidcirculara, sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 23px;
+            transition: background-color 0.3s;
+            &:hover {
+                background-color: aqua;
+            }
+
         }
+
+        .computed {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            img {
+                height: 18px;
+                width: 18px;
+            }
+        }
+    }
+
+
+    .router-wrapper {
+        padding: 24px;
     }
 }

@@ -17,7 +17,7 @@ export class ProductItemComponent {
 
     addToCart() {
         if (this.product) {
-            const productCart: CartProduct = { ...this.product, count: 0 };
+            const productCart: CartProduct = { ...this.product, count: 1 };
             this.store.dispatch(new AddToCart(productCart));
         }
     }

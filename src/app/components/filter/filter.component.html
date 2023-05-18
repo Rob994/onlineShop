@@ -1,0 +1,25 @@
+<div [formGroup]="filterTypeGroup">
+    <mat-form-field>
+        <mat-label>Select filter</mat-label>
+        <mat-select formControlName="filterName">
+            <mat-option *ngFor="let filter of filters" [value]="filter.key">
+                {{ filter.value }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+<div *ngIf="selectedFilter">
+    <form class="form-filter" [formGroup]="formGroup">
+        <div *ngIf="selectedFilter.type === filterTypes.text; else range">
+            <input type="text" [formControlName]="selectedFilter.key" />
+        </div>
+        <ng-template #range>
+            <div *ngIf="selectedFilter.type === filterTypes.range">
+                <input type="number" formControlName="minValue" />
+                <input type="number" formControlName="maxValue" />
+            </div>
+        </ng-template>
+        <button (click)="filterProducts()">Filter</button>
+    </form>
+</div>

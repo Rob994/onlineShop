@@ -1,0 +1,13 @@
+:host {
+    .form-filter {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        input,
+        button {
+            margin: 0 4px;
+        }
+
+    }
+}

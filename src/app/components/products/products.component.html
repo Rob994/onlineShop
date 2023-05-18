@@ -1,1 +1,4 @@
-<app-product-item *ngFor="let product of products$ | async" [product]="product"></app-product-item>
+<app-filter (onSubmitFilter)="setFilters($event)"></app-filter>
+<div class="product-item-content">
+    <app-product-item *ngFor="let product of products$ | async" [product]="product"></app-product-item>
+</div>
