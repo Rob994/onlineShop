@@ -12,12 +12,12 @@ import { AddToCart } from '../../redux/actions/cart.actions';
 export class ProductItemComponent {
     @Input() product?: Product;
 
-    constructor(private store: Store<State>) {}
+    constructor(private _store: Store<State>) {}
 
     addToCart() {
         if (this.product) {
             const productCart: CartProduct = { ...this.product, count: 1 };
-            this.store.dispatch(new AddToCart(productCart));
+            this._store.dispatch(new AddToCart(productCart));
         }
     }
 }

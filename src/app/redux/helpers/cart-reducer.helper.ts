@@ -1,4 +1,4 @@
-import { CartProduct, Product } from '../../models/product.model';
+import { CartProduct, Product } from '../../models';
 
 export function addToCart(cart: CartProduct[], product: Product): CartProduct[] {
     let index = cart.findIndex((el) => el.id === product.id);

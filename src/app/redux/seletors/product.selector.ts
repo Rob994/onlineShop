@@ -1,7 +1,7 @@
-import { Product } from '../../models/product.model';
+import { State } from '../state';
+import { Product } from '../../models';
 import { productNode } from '../reducers/product.reducer';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { State } from '../state';
 
 const selectProductFeature = createFeatureSelector<State>(productNode);
 

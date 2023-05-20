@@ -1,9 +1,9 @@
 import { Filter } from '../../models';
 import { map, Observable } from 'rxjs';
-import { Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { State } from 'src/app/redux/state';
 import { ProductService } from '../../services';
+import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { RangeValues } from 'src/app/models/filter.model';
 import { FilterTypesEnum } from '../../enums/filter-types.enum';
@@ -15,12 +15,24 @@ import { selectProduct } from 'src/app/redux/seletors/product.selector';
     templateUrl: './products.component.html',
     styleUrls: ['./products.component.scss'],
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit {
     filter?: Filter;
     products$!: Observable<Product[]>;
 
-    constructor(private productService: ProductService, private store: Store<State>) {
-        this.products$ = this.store.pipe(
+    constructor(private _productService: ProductService, private _store: Store<State>) {}
+
+    ngOnInit() {
+        this._setProducts();
+        this._getProducts();
+    }
+
+    setFilters(event: Filter) {
+        this.filter = event;
+        this._getProducts();
+    }
+
+    private _setProducts() {
+        this.products$ = this._store.pipe(
             select(selectProduct),
             map((res) =>
                 res.filter((item: Product) => {
@@ -38,30 +50,23 @@ export class ProductsComponent {
                 })
             )
         );
-        this._getProducts();
-    }
-
-    setFilters(event: Filter) {
-        this.filter = event;
-        this._getProducts();
     }
 
     private _filterProductRange(item: Product): boolean {
         if (!this.filter) return true;
         const key = this.filter.key as keyof Product;
         const { maxValue, minValue } = this.filter.values as RangeValues;
-        const numericValue = item[key] as number; // price or rate
-
+        const priceOrRate = item[key] as number;
         if (minValue && maxValue) {
-            return minValue <= numericValue && numericValue <= maxValue;
+            return minValue <= priceOrRate && priceOrRate <= maxValue;
         }
 
         if (minValue && !maxValue) {
-            return minValue <= numericValue;
+            return minValue <= priceOrRate;
         }
 
         if (!minValue && maxValue) {
-            return numericValue <= maxValue;
+            return priceOrRate <= maxValue;
         }
 
         return true;
@@ -75,8 +80,8 @@ export class ProductsComponent {
     }
 
     private _getProducts() {
-        this.productService.getProducts().subscribe((res: Product[]) => {
-            this.store.dispatch(new SetProducts(res));
+        this._productService.getProducts().subscribe((res: Product[]) => {
+            this._store.dispatch(new SetProducts(res));
         });
     }
 }

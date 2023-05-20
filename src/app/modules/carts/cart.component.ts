@@ -13,7 +13,7 @@ import { selectCart } from '../../redux/seletors/cart.selector';
 export class CartComponent {
     products$!: Observable<CartProduct[]>;
 
-    constructor(private store: Store<State>) {
-        this.products$! = this.store.pipe(select(selectCart));
+    constructor(private _store: Store<State>) {
+        this.products$! = this._store.pipe(select(selectCart));
     }
 }

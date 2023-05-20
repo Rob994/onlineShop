@@ -8,9 +8,9 @@ import { environment } from '../../../environments/environment';
     providedIn: 'root',
 })
 export class ProductService {
-    constructor(private httpClient: HttpClient) {}
+    constructor(private _httpClient: HttpClient) {}
 
     getProducts(): Observable<Product[]> {
-        return this.httpClient.get<Product[]>(`${environment.url}products`);
+        return this._httpClient.get<Product[]>(`${environment.url}products`);
     }
 }

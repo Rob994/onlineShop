@@ -1,4 +1,4 @@
-import { CartProduct, Product } from '../models/product.model';
+import { CartProduct, Product } from '../models';
 
 export interface State {
     products: Product[];

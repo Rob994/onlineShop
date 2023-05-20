@@ -11,23 +11,23 @@ import { DecrementInCart, DeleteFromCart, IncrementInCart } from 'src/app/redux/
 })
 export class CartItemComponent {
     @Input() product?: CartProduct;
-    constructor(private store: Store<State>) {}
+    constructor(private _store: Store<State>) {}
 
     deleteFromCart() {
         if (this.product) {
-            this.store.dispatch(new DeleteFromCart(this.product.id));
+            this._store.dispatch(new DeleteFromCart(this.product.id));
         }
     }
 
     decreaseCount() {
         if (this.product) {
-            this.store.dispatch(new DecrementInCart(this.product.id));
+            this._store.dispatch(new DecrementInCart(this.product.id));
         }
     }
 
     increaseCount() {
         if (this.product) {
-            this.store.dispatch(new IncrementInCart(this.product.id));
+            this._store.dispatch(new IncrementInCart(this.product.id));
         }
     }
 }
